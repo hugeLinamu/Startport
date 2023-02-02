@@ -1,19 +1,35 @@
 <template>
-    <!-- <div> FloatProxy </div> -->
+    <div :style="porps.style" ref="el"></div>
+    <pre>{{ metaDate.props }}</pre>
 </template>
 
 
 <script setup lang='ts'>
-import {useAttrs} from 'vue'
-import { metaDate } from '../composables/floating'
-const porps = defineProps<{
-    style: object
-}>()
+import { StyleValue, onMounted, ref  ,watch} from 'vue'
+import { metaDate , proxyEl } from '../composables/floating'
 
+const porps = defineProps<{
+    style: StyleValue
+}>()
 metaDate.props = porps.style
-metaDate.attrs = useAttrs()
+
+
+// 这里的 el 要跟上面 ref="el" 一致
+const el = ref<HTMLElement | null>()
+
+onMounted(() => {
+    proxyEl.value = el.value
+})
+
+watch(()=>porps.style,()=>{
+    metaDate.props = porps.style
+    
+})
+
 </script>
 
 <style scoped >
-
+div {
+    background-color: gray; 
+}
 </style>
