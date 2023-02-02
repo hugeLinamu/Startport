@@ -3,9 +3,6 @@
     <div :style="style">
         <slot :theImageStyle="metaDate.props">
         </slot>
-        <pre>
-            <!-- {{ metaDate.props }} -->
-        </pre>
     </div>
 </template>
 

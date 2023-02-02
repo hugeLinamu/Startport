@@ -1,6 +1,5 @@
 <template>
     <div :style="porps.style" ref="el"></div>
-    <pre>{{ metaDate.props }}</pre>
 </template>
 
 

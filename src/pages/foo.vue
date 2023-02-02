@@ -31,7 +31,6 @@ const theClass = reactive({
     width,
     height,
     ['border-radius']: '50%',
-
 })
 function toBar() {
     router.push({
