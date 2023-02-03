@@ -6,14 +6,15 @@
             <button @click="toBar"> to:bar</button>
         </div>
         <div style="margin: 100px">
-            <FolatProxy :style="theClass"></FolatProxy>
+            <!-- <FolatProxy :style="theClass"></FolatProxy> -->
+            <theImageProxy :style="theClass"></theImageProxy>
         </div>
     </div>
 </template>
 
 <script setup lang='ts'>
-
-import FolatProxy from '../components/FolatProxy.vue';
+import { theImageProxy } from '../composables/images'
+// import FolatProxy from '../components/FolatProxy.vue';
 import { reactive, ref ,computed } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
