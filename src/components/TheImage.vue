@@ -24,6 +24,6 @@ defineProps<{
 </script>
 <style scoped>
 img{
-  transition: all 0.5s linear;
+  /* transition: all 0.5s ease-in-out; */
 }
 </style>

@@ -4,6 +4,9 @@
         <div>
             <button @click="toFoo"> to:foo</button>
         </div>
+        <div>
+            <button @click="toHello"> to:hello</button>
+        </div>
         <!-- <FolatProxy :style="theClass"></FolatProxy> -->
         <theImageProxy :style="theClass"></theImageProxy>
     </div>
@@ -27,6 +30,11 @@ const theClass = reactive({
 function toFoo() {
     router.push({
         name: 'Foo'
+    })
+}
+function toHello(){
+    router.push({
+        name: 'Hello'
     })
 }
 
